@@ -102,14 +102,21 @@
       <pre class="m-0">{{ form }}</pre>
     </b-card>
   </div>
-
+          
+  <div>
+    <b-table striped hover :items="items"></b-table>
+  </div>
 
       </b-container>
     </div>
 
 <!-- Start running your app -->
     <script>
-    
+    const items = [
+  { age: 32, first_name: 'Cyndi' },
+  { age: 27, first_name: 'Havij' },
+  { age: 42, first_name: 'Robert' }
+];
       window.app = new Vue({
         el: "#app",
            data() {
@@ -121,7 +128,8 @@
           checked: []
         },
         foods: [{ text: 'Select One', value: null }, 'Carrots', 'Beans', 'Tomatoes', 'Corn'],
-        show: true
+        show: true,
+        items:items
       }
     },
     methods: {
